@@ -10,28 +10,41 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background: #f4f4f4;
-            color: #333;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 25%, #a5b4fc 50%, #f0abfc 75%, #67e8f9 100%);
+            background-size: 200% 200%;
+            animation: bgmove 15s ease-in-out infinite;
+            color: #243046;
+        }
+        @keyframes bgmove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 2rem 0;
+            background: rgba(255,255,255,0.7);
+            box-shadow: 0 2px 12px 0 rgba(98,0,234,0.05);
+            color: #243046;
+            padding: 2rem 0 1.2rem 0;
             text-align: center;
+            position: relative;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             display: inline-block;
-            border-radius: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
             padding: 0.4em 1em;
-            background: linear-gradient(270deg, #ff4b2b, #ff416c, #ff4b2b, #1cb5e0, #00dbde, #43cea2, #38f9d7, #43e97b, #f9d423, #ff4e50, #f7971e, #f953c6);
-            background-size: 2000% 2000%;
+            border-radius: 1.5rem;
+            background: linear-gradient(90deg, #6366f1, #06b6d4, #a21caf);
+            background-size: 300% 300%;
+            color: #fff;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            animation: rainbow 8s ease-in-out infinite;
+            animation: rainbow 6s linear infinite;
         }
         @keyframes rainbow {
             0% { background-position: 0% 50%; }
@@ -39,81 +52,117 @@
             100% { background-position: 0% 50%; }
         }
         header p {
-            font-size: 1.2rem;
-            margin: 0.5rem 0 0;
+            font-size: 1.25rem;
+            margin: 0.8rem 0 0 0;
+            color: #312e81;
         }
         nav {
-            background: #444;
-            padding: 1rem;
+            background: transparent;
+            padding: 1rem 0 0.5rem 0;
             text-align: center;
         }
         nav a {
-            color: #fff;
-            margin: 0 1rem;
+            color: #06b6d4;
+            margin: 0 1.2rem;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
+            border-bottom: 2px solid transparent;
+            transition: border 0.2s, color 0.2s;
+        }
+        nav a:hover {
+            border-bottom: 2px solid #a21caf;
+            color: #a21caf;
+        }
+        .divider {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            display: block;
         }
         section {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: auto;
+            padding: 2.5rem 1rem;
+            max-width: 1100px;
+            margin: -2rem auto 2rem auto;
+            background: rgba(255,255,255,0.85);
+            border-radius: 1.2rem;
+            box-shadow: 0 4px 24px 0 rgba(98,0,234,0.07);
         }
         section h2 {
             text-align: center;
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.4rem;
+            color: #6366f1;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
         .projects {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+            gap: 1.7rem;
         }
         .project {
-            background: #fff;
-            margin: 1rem;
-            padding: 2rem;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            flex: 1 1 calc(30% - 2rem);
-            max-width: calc(30% - 2rem);
+            background: linear-gradient(135deg, #e0e7ff 0%, #f0abfc 100%);
+            margin: 0.5rem 0;
+            padding: 2rem 1.2rem 1.2rem 1.2rem;
+            box-shadow: 0 2px 18px 0 rgba(98,0,234,0.08);
+            border-radius: 1.1rem;
+            transition: transform 0.25s, box-shadow 0.25s;
+            flex: 1 1 290px;
+            max-width: 350px;
+            min-width: 260px;
             text-align: center;
+            border: 1.5px solid #a5b4fc;
         }
         .project:hover {
-            transform: translateY(-10px);
+            transform: translateY(-7px) scale(1.04);
+            box-shadow: 0 6px 24px 0 rgba(98,0,234,0.13);
+            border-color: #a21caf;
         }
         .project img {
-            width: 50px;
-            height: 50px;
+            width: 56px;
+            height: 56px;
             margin-bottom: 1rem;
         }
         .project h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #333;
+            margin-top: 0.5rem;
+            font-size: 1.25rem;
+            color: #312e81;
+            font-weight: bold;
         }
         .project p {
-            margin: 0.5rem 0;
+            margin: 0.5rem 0 0.8rem 0;
         }
         .project a {
             display: inline-block;
             margin-top: 0.5rem;
             text-decoration: none;
-            color: #0066cc;
+            color: #06b6d4;
             font-weight: bold;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s;
+        }
+        .project a:hover {
+            border-bottom: 1px solid #a21caf;
+            color: #a21caf;
         }
         footer {
             text-align: center;
-            padding: 1rem;
-            background: #333;
+            padding: 1.3rem;
+            background: rgba(99,102,241,0.9);
             color: #fff;
             position: relative;
             bottom: 0;
             width: 100%;
+            border-top-left-radius: 1.1rem;
+            border-top-right-radius: 1.1rem;
+            margin-top: 2rem;
         }
         footer a {
-            color: #fff;
-            text-decoration: none;
+            color: #f9fafb;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -122,40 +171,39 @@
         <h1><span>Swathi Ashokkumar</span></h1>
         <p>Data Science Graduate | QA Engineer</p>
     </header>
-
     <nav>
         <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
-
-    <section id="about">
+    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#ffffff" fill-opacity="0.7"/></svg>
+    <section id="about" style="margin-top:0;">
         <h2>About Me</h2>
         <p>I am a Data Science graduate student with a robust background in software quality assurance. I transitioned from a successful career as a Software QA Engineer, where I honed my skills in problem-solving, attention to detail, and collaboration.</p>
         <p>Equipped with expertise in PowerBI, Excel, Python, SQL, machine learning, deep learning, and natural language processing (NLP), I excel at uncovering insights and translating data into actionable solutions.</p>
     </section>
-
+    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#a5b4fc" fill-opacity="0.18"/></svg>
     <section id="projects">
         <h2>Projects</h2>
         <div class="projects">
             <div class="project">
-                <img src="https://img.icons8.com/ios-filled/50/000000/car--v1.png" alt="Car Icon">
+                <img src="https://img.icons8.com/ios-filled/50/6366f1/car--v1.png" alt="Car Icon">
                 <h3>Prediction of Autotrader Car Prices</h3>
                 <p>Developed a predictive model to estimate car prices using historical data from Autotrader.</p>
             </div>
             <div class="project">
-                <img src="https://img.icons8.com/ios-filled/50/000000/bicycle.png" alt="Bicycle Icon">
+                <img src="https://img.icons8.com/ios-filled/50/06b6d4/bicycle.png" alt="Bicycle Icon">
                 <h3>Analysis of Cycle Hire Dataset using PySpark</h3>
                 <p>Leveraged PySpark for scalable data analysis of a cycle hire dataset.</p>
             </div>
             <div class="project">
-                <img src="https://img.icons8.com/ios-filled/50/000000/robot-2.png" alt="Robot AI Icon">
+                <img src="https://img.icons8.com/ios-filled/50/a21caf/robot-2.png" alt="Robot AI Icon">
                 <h3>Detecting AI Images</h3>
                 <p>Developed a deep learning model to detect AI-generated images using PyTorch.</p>
             </div>
         </div>
     </section>
-
+    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#ffffff" fill-opacity="0.7"/></svg>
     <footer id="contact">
         <p>Contact: <a href="mailto:swathiash16@gmail.com">swathiash16@gmail.com</a> | Phone: +44 7775102672</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/swathi-ashokkumar" target="_blank">Swathi Ashokkumar</a></p>
