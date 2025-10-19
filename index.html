@@ -22,6 +22,21 @@
         header h1 {
             margin: 0;
             font-size: 2.5rem;
+            display: inline-block;
+            border-radius: 1.5rem;
+            padding: 0.4em 1em;
+            background: linear-gradient(270deg, #ff4b2b, #ff416c, #ff4b2b, #1cb5e0, #00dbde, #43cea2, #38f9d7, #43e97b, #f9d423, #ff4e50, #f7971e, #f953c6);
+            background-size: 2000% 2000%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: rainbow 8s ease-in-out infinite;
+        }
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         header p {
             font-size: 1.2rem;
@@ -104,7 +119,7 @@
 </head>
 <body>
     <header>
-        <h1>Swathi Ashokkumar</h1>
+        <h1><span>Swathi Ashokkumar</span></h1>
         <p>Data Science Graduate | QA Engineer</p>
     </header>
 
@@ -116,8 +131,8 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a Data Science graduate student with a robust background in software quality assurance. I transitioned from a successful career as a Software QA Engineer, where I honed my skills in testing and improving software products, to pursue my passion for data science in the UK.</p>
-        <p>Equipped with expertise in PowerBI, Excel, Python, SQL, machine learning, deep learning, and natural language processing (NLP), I excel at uncovering insights and translating data into actionable strategies. My journey reflects a commitment to continuous learning and a drive to leverage data science to solve real-world problems. I thrive in collaborative environments and am eager to contribute to innovative, data-driven projects that make a tangible impact.</p>
+        <p>I am a Data Science graduate student with a robust background in software quality assurance. I transitioned from a successful career as a Software QA Engineer, where I honed my skills in problem-solving, attention to detail, and collaboration.</p>
+        <p>Equipped with expertise in PowerBI, Excel, Python, SQL, machine learning, deep learning, and natural language processing (NLP), I excel at uncovering insights and translating data into actionable solutions.</p>
     </section>
 
     <section id="projects">
