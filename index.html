@@ -3,240 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swathi Ashokkumar - Portfolio</title>
+    <title>Profile</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #e0e7ff 0%, #b3c0d9 30%, #7dd3fc 75%, #64748b 100%);
-            background-size: 200% 200%;
-            animation: bgmove 15s ease-in-out infinite;
-            color: #243046;
+            padding: 20px;
         }
-        @keyframes bgmove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid skyblue;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
-        header {
-            background: rgba(236,246,255,0.8);
-            box-shadow: 0 2px 12px 0 rgba(98,0,234,0.05);
-            color: #243046;
-            padding: 2rem 0 1.2rem 0;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.75rem;
-            display: inline-block;
-            font-weight: bold;
-            letter-spacing: 2px;
-            padding: 0.4em 1em;
-            border-radius: 1.5rem;
-            background: linear-gradient(90deg, #7dd3fc, #64748b, #38bdf8);
-            background-size: 300% 300%;
-            color: #fff;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            animation: rainbow 6s linear infinite;
-        }
-        @keyframes rainbow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        header p {
-            font-size: 1.25rem;
-            margin: 0.8rem 0 0 0;
-            color: #1e293b;
-        }
-        nav {
-            background: transparent;
-            padding: 1rem 0 0.5rem 0;
-            text-align: center;
-        }
-        nav a {
-            color: #38bdf8;
-            margin: 0 1.2rem;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border-bottom: 2px solid transparent;
-            transition: border 0.2s, color 0.2s;
-        }
-        nav a:hover {
-            border-bottom: 2px solid #64748b;
-            color: #64748b;
-        }
-        .divider {
+        .profile-picture img {
             width: 100%;
-            margin: 0;
-            padding: 0;
-            border: none;
-            display: block;
+            height: 100%;
+            object-fit: cover;
         }
-        section {
-            padding: 2.5rem 1rem;
-            max-width: 1100px;
-            margin: -2rem auto 2rem auto;
-            background: rgba(236,246,255,0.85);
-            border-radius: 1.2rem;
-            box-shadow: 0 4px 24px 0 rgba(98,0,234,0.07);
+        .project-title {
+            font-size: 1.2em;
+            margin: 10px 0;
         }
-        section h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1.4rem;
-            color: #38bdf8;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 1.7rem;
-        }
-        .project-link {
+        .project-title a {
             text-decoration: none;
-            color: inherit;
-            flex: 1 1 290px;
-            max-width: 350px;
-            min-width: 260px;
+            color: #007BFF;
+            transition: color 0.3s;
         }
-        .project {
-            background: rgba(236,246,255,0.92);
-            margin: 0.5rem 0;
-            padding: 2rem 1.2rem 1.2rem 1.2rem;
-            box-shadow: 0 2px 18px 0 rgba(44,45,57,0.09);
-            border-radius: 1.1rem;
-            transition: 
-                transform 0.35s cubic-bezier(0.34,1.56,0.64,1), 
-                box-shadow 0.22s, 
-                border-color 0.22s,
-                background 0.24s;
-            text-align: center;
-            border: 1.5px solid #7dd3fc;
-            cursor: pointer;
-            position: relative;
-        }
-        .project:hover {
-            transform: translateY(-7px) scale(1.04);
-            box-shadow: 0 8px 28px 0 rgba(44,45,57,0.16);
-            border-color: #38bdf8;
-            background: rgba(125, 211, 252, 0.18);
-        }
-        .project img {
-            width: 56px;
-            height: 56px;
-            margin-bottom: 1rem;
-        }
-        .project h3 {
-            margin-top: 0.5rem;
-            font-size: 1.25rem;
-            color: #1e293b;
-            font-weight: bold;
-        }
-        .project p {
-            margin: 0.5rem 0 1.1rem 0;
-            color: #334155;
-        }
-        .project .pdf-label {
-            display: block;
-            margin-top: 1rem;
-            color: #38bdf8;
-            font-weight: bold;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-        .project .external-icon {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            width: 22px; height: 22px;
-            opacity: 0.3;
-            transition: opacity 0.2s;
-        }
-        .project:hover .external-icon {
-            opacity: 0.8;
-        }
-        footer {
-            text-align: center;
-            padding: 1.3rem;
-            background: rgba(125,211,252,0.7);
-            color: #1e293b;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            border-top-left-radius: 1.1rem;
-            border-top-right-radius: 1.1rem;
-            margin-top: 2rem;
-        }
-        footer a {
-            color: #38bdf8;
-            text-decoration: underline;
+        .project-title a:hover {
+            color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><span>Swathi Ashokkumar</span></h1>
-        <p>Data Science Graduate | QA Engineer</p>
-    </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#ffffff" fill-opacity="0.7"/></svg>
-    <section id="about" style="margin-top:0;">
-        <h2>About Me</h2>
-        <p>I am a Data Science graduate student with a robust background in software quality assurance. I transitioned from a successful career as a Software QA Engineer, where I honed my skills in problem-solving, attention to detail, and collaboration.</p>
-        <p>Equipped with expertise in PowerBI, Excel, Python, SQL, machine learning, deep learning, and natural language processing (NLP), I excel at uncovering insights and translating data into actionable solutions.</p>
-    </section>
-    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#7dd3fc" fill-opacity="0.16"/></svg>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <a class="project-link" href="autotrader.pdf" target="_blank" rel="noopener">
-                <div class="project">
-                    <img src="https://img.icons8.com/ios-filled/50/7dd3fc/car--v1.png" alt="Car Icon">
-                    <h3>Prediction of Autotrader Car Prices</h3>
-                    <p>Developed a predictive model to estimate car prices using historical data from Autotrader.</p>
-                    <span class="pdf-label">View PDF</span>
-                    <img class="external-icon" src="https://img.icons8.com/ios-filled/50/38bdf8/external-link.png" alt="External PDF">
-                </div>
-            </a>
-            <a class="project-link" href="cyclehire.pdf" target="_blank" rel="noopener">
-                <div class="project">
-                    <img src="https://img.icons8.com/ios-filled/50/38bdf8/bicycle.png" alt="Bicycle Icon">
-                    <h3>Analysis of Cycle Hire Dataset using PySpark</h3>
-                    <p>Leveraged PySpark for scalable data analysis of a cycle hire dataset.</p>
-                    <span class="pdf-label">View PDF</span>
-                    <img class="external-icon" src="https://img.icons8.com/ios-filled/50/38bdf8/external-link.png" alt="External PDF">
-                </div>
-            </a>
-            <a class="project-link" href="detecting-ai-images.pdf" target="_blank" rel="noopener">
-                <div class="project">
-                    <img src="https://img.icons8.com/ios-filled/50/64748b/robot-2.png" alt="Robot AI Icon">
-                    <h3>Detecting AI Images</h3>
-                    <p>Developed a deep learning model to detect AI-generated images using PyTorch.</p>
-                    <span class="pdf-label">View PDF</span>
-                    <img class="external-icon" src="https://img.icons8.com/ios-filled/50/38bdf8/external-link.png" alt="External PDF">
-                </div>
-            </a>
-        </div>
-    </section>
-    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#ffffff" fill-opacity="0.7"/></svg>
-    <footer id="contact">
-        <p>Contact: <a href="mailto:swathiash16@gmail.com">swathiash16@gmail.com</a> | Phone: +44 7775102672</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/swathi-ashokkumar" target="_blank">Swathi Ashokkumar</a></p>
-    </footer>
+    <div class="profile-picture">
+        <img src="path/to/profile-picture.jpg" alt="Profile Picture">
+    </div>
+    <h1>My Projects</h1>
+    <div class="project-title"><a href="AML.pdf">AML Project</a></div>
+    <div class="project-title"><a href="BigData.pdf">Big Data Project</a></div>
+    <div class="project-title"><a href="Deeplearning_final2.pdf">Deep Learning Project</a></div>
 </body>
 </html>
