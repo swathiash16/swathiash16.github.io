@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analysis of Cycle Hire Dataset using PySpark</title>
+    <meta name="theme-color" content="#1E3A8A">
+    <title>Analysis of Cycle Hire Dataset using PySpark - Swathi Ashokkumar</title>
+    <link rel="stylesheet" href="assets/css/theme.css">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background: #f4f4f4;
-            color: #333;
-        }
         .container {
             padding: 2rem;
             max-width: 800px;
-            margin: auto;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
         }
-        h2 {
+        .container h2 {
+            color: var(--primary-blue);
+            margin-bottom: var(--spacing-lg);
             text-align: center;
-            margin-bottom: 1rem;
+            font-size: 2rem;
         }
-        p {
-            margin: 0.5rem 0;
+        .container p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
         }
-        a {
-            color: #0066cc;
+        .container a {
+            color: var(--primary-blue);
+            text-decoration: underline;
+            transition: color var(--transition-base);
+        }
+        .container a:hover {
+            color: var(--accent-blue);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-blue);
             text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover {
+            color: var(--accent-blue);
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
         <h2>Analysis of Cycle Hire Dataset using PySpark</h2>
         <p>Leveraged PySpark for scalable data analysis of a cycle hire dataset, encompassing data preprocessing, exploratory data analysis (EDA), and feature engineering to optimize dataset suitability for analysis. Applied advanced statistical techniques, including the t-test, to investigate and compare ride duration metrics, providing actionable insights into usage patterns and operational efficiencies. Communicated findings effectively through compelling visualizations using PySpark and Matplotlib, facilitating data-driven decision-making and operational improvements.</p>
-        <p>Detailed results and methodology can be found in the <a href="https://github.com/swathiash16/London-CycleHire-DataAnalysis/blob/main/BigData.ipynb" target="_blank">project notebook</a> and the <a href="https://github.com/swathiash16/London-CycleHire-DataAnalysis/blob/main/BigData.pdf" target="_blank">project report</a>.</p>
+        <p>Detailed results and methodology can be found in the <a href="https://github.com/swathiash16/London-CycleHire-DataAnalysis/blob/main/BigData.ipynb" target="_blank" rel="noopener noreferrer">project notebook</a> and the <a href="https://github.com/swathiash16/London-CycleHire-DataAnalysis/blob/main/BigData.pdf" target="_blank" rel="noopener noreferrer">project report</a>.</p>
     </div>
 </body>
 </html>
