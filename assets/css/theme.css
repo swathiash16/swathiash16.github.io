@@ -35,6 +35,12 @@
     /* Transitions */
     --transition-base: 0.2s ease;
     --transition-slow: 0.3s ease;
+    
+    /* Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
 }
 
 /* Base Styles */
@@ -143,17 +149,17 @@ nav a:focus {
 }
 
 /* Sections */
-section {
+section, main {
     padding: var(--spacing-xl) var(--spacing-md);
     max-width: 1100px;
     margin: 0 auto;
 }
 
-section:nth-child(odd) {
+section.bg-white, main.bg-white {
     background-color: var(--white);
 }
 
-section:nth-child(even) {
+section.bg-light, main.bg-light {
     background-color: var(--light-grey-bg);
 }
 
