@@ -104,22 +104,34 @@
             gap: 1.7rem;
         }
         .project {
-            background: linear-gradient(135deg, #e0e7ff 0%, #f0abfc 100%);
+            background: rgba(255,255,255,0.65);
             margin: 0.5rem 0;
             padding: 2rem 1.2rem 1.2rem 1.2rem;
             box-shadow: 0 2px 18px 0 rgba(98,0,234,0.08);
             border-radius: 1.1rem;
-            transition: transform 0.25s, box-shadow 0.25s;
+            transition: 
+                transform 0.4s cubic-bezier(0.34,1.56,0.64,1), 
+                box-shadow 0.25s, 
+                border-color 0.25s,
+                background 0.3s;
             flex: 1 1 290px;
             max-width: 350px;
             min-width: 260px;
             text-align: center;
             border: 1.5px solid #a5b4fc;
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+        }
+        .project.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition-delay: 0.1s;
         }
         .project:hover {
-            transform: translateY(-7px) scale(1.04);
-            box-shadow: 0 6px 24px 0 rgba(98,0,234,0.13);
+            transform: translateY(-7px) scale(1.05);
+            box-shadow: 0 8px 28px 0 rgba(98,0,234,0.16);
             border-color: #a21caf;
+            background: rgba(246, 239, 255, 0.85);
         }
         .project img {
             width: 56px;
@@ -133,20 +145,77 @@
             font-weight: bold;
         }
         .project p {
-            margin: 0.5rem 0 0.8rem 0;
+            margin: 0.5rem 0 1.1rem 0;
         }
-        .project a {
-            display: inline-block;
-            margin-top: 0.5rem;
-            text-decoration: none;
-            color: #06b6d4;
+        .project .view-details {
+            display: none;
+            background: linear-gradient(90deg, #fbbf24, #f59e42);
+            color: #fff;
+            border: none;
             font-weight: bold;
-            border-bottom: 1px solid transparent;
-            transition: border-bottom 0.2s;
+            padding: 0.5em 1.2em;
+            border-radius: 2em;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-size: 1.03rem;
+            transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+            box-shadow: 0 2px 10px rgba(251,191,36,0.08);
         }
-        .project a:hover {
-            border-bottom: 1px solid #a21caf;
+        .project:hover .view-details {
+            display: inline-block;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(44,45,57,0.4);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 1.2rem;
+            padding: 2rem;
+            max-width: 420px;
+            width: 95vw;
+            box-shadow: 0 8px 32px 0 rgba(98,0,234,0.18);
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.4s;
+        }
+        .modal-content h3 {
+            color: #6366f1;
+        }
+        .close-modal {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: transparent;
+            border: none;
+            font-size: 1.7rem;
             color: #a21caf;
+            cursor: pointer;
+        }
+        /* Loader */
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #a21caf;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+            display: none;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg);}
+            100% { transform: rotate(360deg);}
         }
         footer {
             text-align: center;
@@ -185,21 +254,34 @@
     <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#a5b4fc" fill-opacity="0.18"/></svg>
     <section id="projects">
         <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
+        <div class="loader" id="project-loader"></div>
+        <div class="projects" id="projects-list" style="visibility:hidden;">
+            <div class="project" data-title="Prediction of Autotrader Car Prices" data-desc="Developed a predictive model to estimate car prices using historical data from Autotrader." data-img="https://img.icons8.com/ios-filled/50/6366f1/car--v1.png">
                 <img src="https://img.icons8.com/ios-filled/50/6366f1/car--v1.png" alt="Car Icon">
                 <h3>Prediction of Autotrader Car Prices</h3>
                 <p>Developed a predictive model to estimate car prices using historical data from Autotrader.</p>
+                <button class="view-details">View Details</button>
             </div>
-            <div class="project">
+            <div class="project" data-title="Analysis of Cycle Hire Dataset using PySpark" data-desc="Leveraged PySpark for scalable data analysis of a cycle hire dataset." data-img="https://img.icons8.com/ios-filled/50/06b6d4/bicycle.png">
                 <img src="https://img.icons8.com/ios-filled/50/06b6d4/bicycle.png" alt="Bicycle Icon">
                 <h3>Analysis of Cycle Hire Dataset using PySpark</h3>
                 <p>Leveraged PySpark for scalable data analysis of a cycle hire dataset.</p>
+                <button class="view-details">View Details</button>
             </div>
-            <div class="project">
+            <div class="project" data-title="Detecting AI Images" data-desc="Developed a deep learning model to detect AI-generated images using PyTorch." data-img="https://img.icons8.com/ios-filled/50/a21caf/robot-2.png">
                 <img src="https://img.icons8.com/ios-filled/50/a21caf/robot-2.png" alt="Robot AI Icon">
                 <h3>Detecting AI Images</h3>
                 <p>Developed a deep learning model to detect AI-generated images using PyTorch.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+        <!-- Modal for details -->
+        <div class="modal" id="project-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-modal">&times;</button>
+                <img id="modal-img" src="" alt="" style="width:60px;height:60px;margin-bottom:1rem;">
+                <h3 id="modal-title"></h3>
+                <p id="modal-desc"></p>
             </div>
         </div>
     </section>
@@ -208,5 +290,46 @@
         <p>Contact: <a href="mailto:swathiash16@gmail.com">swathiash16@gmail.com</a> | Phone: +44 7775102672</p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/swathi-ashokkumar" target="_blank">Swathi Ashokkumar</a></p>
     </footer>
+    <script>
+        // Loader and animated reveal of projects
+        document.addEventListener("DOMContentLoaded", function() {
+            const loader = document.getElementById("project-loader");
+            const projectsList = document.getElementById("projects-list");
+            loader.style.display = "block";
+            setTimeout(() => {
+                loader.style.display = "none";
+                projectsList.style.visibility = "visible";
+                // Animate in cards
+                const cards = document.querySelectorAll(".project");
+                cards.forEach((card, i) => {
+                    setTimeout(() => {
+                        card.classList.add("visible");
+                    }, 150 + i * 200);
+                });
+            }, 1100); // simulate loading
+        });
+
+        // Intersection Observer (for future sections, already animating on load above)
+        // Modal logic
+        document.querySelectorAll('.view-details').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const project = btn.closest('.project');
+                document.getElementById('modal-title').textContent = project.getAttribute('data-title');
+                document.getElementById('modal-desc').textContent = project.getAttribute('data-desc');
+                document.getElementById('modal-img').src = project.getAttribute('data-img');
+                document.getElementById('modal-img').alt = project.getAttribute('data-title') + " icon";
+                document.getElementById('project-modal').style.display = 'flex';
+            });
+        });
+        document.getElementById('close-modal').onclick = function() {
+            document.getElementById('project-modal').style.display = 'none';
+        };
+        window.onclick = function(event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
