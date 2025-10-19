@@ -233,6 +233,98 @@
             color: #f9fafb;
             text-decoration: underline;
         }
+        /* Skills section styles */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.7rem;
+            margin-top: 2rem;
+        }
+        .skill-card {
+            background: rgba(255,255,255,0.65);
+            padding: 2rem 1.2rem;
+            box-shadow: 0 2px 18px 0 rgba(98,0,234,0.08);
+            border-radius: 1.1rem;
+            transition: 
+                transform 0.4s cubic-bezier(0.34,1.56,0.64,1), 
+                box-shadow 0.25s, 
+                border-color 0.25s,
+                background 0.3s;
+            flex: 1 1 270px;
+            max-width: 320px;
+            min-width: 250px;
+            text-align: center;
+            border: 1.5px solid #a5b4fc;
+        }
+        .skill-card:hover {
+            transform: translateY(-7px) scale(1.03);
+            box-shadow: 0 8px 28px 0 rgba(98,0,234,0.16);
+            border-color: #06b6d4;
+            background: rgba(224, 242, 254, 0.85);
+        }
+        .skill-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        .skill-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+            color: #312e81;
+            font-weight: bold;
+        }
+        .skill-card p {
+            margin: 0.5rem 0;
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        /* Education section styles */
+        .education-card {
+            background: rgba(255,255,255,0.65);
+            padding: 2rem 2rem;
+            box-shadow: 0 2px 18px 0 rgba(98,0,234,0.08);
+            border-radius: 1.1rem;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+            border: 1.5px solid #a5b4fc;
+            transition: 
+                transform 0.3s, 
+                box-shadow 0.25s, 
+                border-color 0.25s,
+                background 0.3s;
+        }
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 28px 0 rgba(98,0,234,0.16);
+            border-color: #6366f1;
+            background: rgba(238, 242, 255, 0.85);
+        }
+        .education-card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        .education-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.4rem;
+            color: #312e81;
+            font-weight: bold;
+        }
+        .education-card .institution {
+            font-size: 1.1rem;
+            color: #6366f1;
+            font-weight: 600;
+            margin: 0.3rem 0 1rem 0;
+        }
+        .education-card .description {
+            margin: 0.5rem 0;
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +334,8 @@
     </header>
     <nav>
         <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -250,6 +344,37 @@
         <h2>About Me</h2>
         <p>I am a Data Science graduate student with a robust background in software quality assurance. I transitioned from a successful career as a Software QA Engineer, where I honed my skills in problem-solving, attention to detail, and collaboration.</p>
         <p>Equipped with expertise in PowerBI, Excel, Python, SQL, machine learning, deep learning, and natural language processing (NLP), I excel at uncovering insights and translating data into actionable solutions.</p>
+    </section>
+    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#a5b4fc" fill-opacity="0.18"/></svg>
+    <section id="skills">
+        <h2>Skills & Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://img.icons8.com/ios-filled/50/6366f1/combo-chart.png" alt="Data Analysis Icon">
+                <h3>Data Analysis</h3>
+                <p>Proficient in PowerBI, Excel, Python, and SQL for comprehensive data analysis and visualization</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://img.icons8.com/ios-filled/50/06b6d4/test-tube.png" alt="QA Icon">
+                <h3>Software Quality Assurance</h3>
+                <p>Extensive experience in software testing, quality control, and process optimization</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://img.icons8.com/ios-filled/50/a21caf/artificial-intelligence.png" alt="Data Science Icon">
+                <h3>Data Science</h3>
+                <p>Expertise in machine learning, deep learning, and natural language processing (NLP)</p>
+            </div>
+        </div>
+    </section>
+    <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#ffffff" fill-opacity="0.7"/></svg>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-card">
+            <img src="https://img.icons8.com/ios-filled/50/6366f1/graduation-cap.png" alt="Education Icon">
+            <h3>Masters in Data Science</h3>
+            <p class="institution">Manchester Metropolitan University</p>
+            <p class="description">Advanced studies in data science, machine learning, statistical analysis, and big data technologies</p>
+        </div>
     </section>
     <svg class="divider" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,120 1440,60 L1440,90 L0,90Z" fill="#a5b4fc" fill-opacity="0.18"/></svg>
     <section id="projects">
